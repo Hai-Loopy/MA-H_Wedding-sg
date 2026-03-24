@@ -273,7 +273,7 @@ section {
     padding: 0 !important;                    /* ← Important */
     background: 
         url(../images/assalamualaikum-3.png) center center / cover no-repeat,
-        linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF);
+        /* linear-gradient(to right, #F8F4FF, #f9fcff, #F8F4FF); */
     display: flex;
     flex-direction: column;
     align-items: center;
