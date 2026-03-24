@@ -82,8 +82,8 @@ h1, h2, h3, p, div, section {
 
 /* Envelope Button - Now as big as possible */
 .overlay .overlay-content .toggle-button {
-    width: 400px;                    /* Bigger button area */
-    height: 600px;                   /* Bigger button area */
+    width: 420px;                    /* Bigger button area */
+    height: 100vh;                   /* Bigger button area */
     background-image: url('../images/envelop.png');
     background-size: cover;        /* Keeps the whole envelope visible */
     background-repeat: no-repeat;
