@@ -46,68 +46,79 @@ h1, h2, h3, p, div, section {
 
 
 /* Overlay that covers the entire viewport */
+/* Overlay that covers the entire viewport */
 .overlay {
     width: 420px;
-    /* Same width as the card-container */
-    height: 100%;
-    /* Blur the background */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
     background-image: url('../images/1.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    position: relative;
 }
 
-/* Center the button within the overlay */
+/* Make the whole overlay clickable */
+.overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+}
+
+/* Center the envelope button */
 .overlay .overlay-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
     text-align: center;
-    backdrop-filter: blur(3px);
-}
-
-/* Circular toggle button - Fixed for bigger image */
-.overlay .overlay-content .toggle-button {
-    width: 280px;
-    height: 200px;
-    background-image: url('../images/envelop.png');
-    background-size: contain;        /* Best for transparent images */
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;   /* Important */
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-    cursor: pointer;
-    overflow: hidden;
-}
-
-.overlay .overlay-content .toggle-button p {
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    font-weight: 500;
-    font-family: "Great Vibes", cursive;
-    color: #302b63;
-}
-
-.overlay .overlay-content .toggle-button .buka {
-    font-size: 18px;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    color: #302b63;
-    margin-top: 8px;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
     z-index: 2;
     position: relative;
 }
 
+/* Envelope button - now just visual, not the only clickable area */
+.overlay .overlay-content .toggle-button {
+    width: 280px;
+    height: 200px;
+    background-image: url('../images/envelop.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    pointer-events: none;           /* Let clicks go through to the overlay */
+}
+
+/* Text on top of envelope */
+.overlay .overlay-content .toggle-button p {
+    position: absolute;
+    font-size: 32px;
+    font-family: "Great Vibes", cursive;
+    color: #302b63;
+    text-shadow: 2px 2px 4px rgba(255,255,255,0.9);
+    z-index: 3;
+}
+
+.overlay .overlay-content .toggle-button .buka {
+    position: absolute;
+    bottom: 25px;
+    font-size: 18px;
+    font-family: "Roboto", sans-serif;
+    color: #302b63;
+    text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+    z-index: 3;
+}
 
 
 
