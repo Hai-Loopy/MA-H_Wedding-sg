@@ -249,6 +249,7 @@ section {
     position: relative;
     min-height: 100vh;
     width: 100%;
+    min-width: 320px;
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden;
@@ -259,6 +260,7 @@ section {
     background-size: cover;
     background-position: center;
     min-height: 100vh;
+    min-width: 320px;
     z-index: 500;
     border-bottom: 1px solid rgb(195, 195, 195);
 }
@@ -266,6 +268,7 @@ section {
     position: relative;
     min-height: 100vh;
     width: 100%;
+    min-width: 320px;
     margin: 0 !important;
     padding: 0 !important;                    /* ← Important */
     background: 
