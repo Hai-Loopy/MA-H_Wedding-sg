@@ -4,10 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ★★★ SOCIAL PREVIEW TAGS - ADD THESE ★★★ -->
+    <meta property="og:title" content="Wedding Invitation - Hai & Mai Anh">
+    <meta property="og:description" content="25 April 2026 | 6:00 PM | Sai Gon, Vietnam">
+    <meta property="og:image" content="https://yourdomain.com/images/preview.jpg">  <!-- ← CHANGE TO YOUR REAL IMAGE URL -->
+    <meta property="og:url" content="https://yourdomain.com">                   <!-- ← your actual website URL -->
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Existing CSS links and title... -->
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Css Vendor -->
     <link rel="stylesheet" href="./css/style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> -->
     <title>Wedding Card H&MA</title>
 </head>
 
@@ -382,6 +396,41 @@
 
     <!-- Custom Js -->
     <script src="./js/main.js"></script>
+                
+    <!-- Custom Js -->
+    <script src="./js/main.js"></script>
+
+    <!-- ★★★ FIX MUSIC PAUSE WHEN TAB HIDDEN / PHONE SWITCHED ★★★ -->
+    <script>
+        const audio = document.getElementById('audio-player');
+        
+        if (audio) {
+            // Pause when tab is hidden (works on mobile & desktop)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    audio.pause();
+                } else {
+                    // Optional: resume only if it was playing before
+                    if (audio.dataset.wasPlaying === 'true') {
+                        audio.play().catch(() => {});
+                    }
+                }
+            });
+
+            // Remember playing state
+            audio.addEventListener('play', () => {
+                audio.dataset.wasPlaying = 'true';
+            });
+            audio.addEventListener('pause', () => {
+                audio.dataset.wasPlaying = 'false';
+            });
+
+            // Also pause when user leaves the page
+            window.addEventListener('beforeunload', () => {
+                audio.pause();
+            });
+        }
+    </script>
 </body>
 
 </html>
