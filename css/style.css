@@ -192,7 +192,7 @@ h1, h2, h3, p, div, section {
     position: absolute;
     left: -10px;
     /* Start just off the left edge of the card */
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #ffe6f2, #ff6ec7,  #ffffff);
     border-radius: 50%;
     /* Rounded shape */
     opacity: 0.5;
