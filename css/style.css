@@ -74,38 +74,18 @@ h1, h2, h3, p, div, section {
 
 /* Circular toggle button - Fixed for bigger image */
 .overlay .overlay-content .toggle-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 280px;                    /* Slightly wider for better fit */
-    height: 200px;                   /* Increased height to match new image better */
-    background-color: transparent;
+    width: 280px;
+    height: 200px;
     background-image: url('../images/envelop.png');
-    
-    /* This is the key fix */
-    background-size: contain;        /* ← Changed from 100% 100% */
+    background-size: contain;        /* Best for transparent images */
     background-repeat: no-repeat;
     background-position: center;
-    
+    background-color: transparent;   /* Important */
     border: none;
-    border-radius: 15px;             /* Softer rounded corners */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 
-                0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     overflow: hidden;
-    
-    /* Remove clip-path if it was cutting the image */
-    /* clip-path: inset(0 round 10px); */  
-    margin: 0;
-    padding: 0;
-    font-size: 32px;
-    font-weight: 500;
-    font-family: "Great Vibes", cursive;
-    color: #302b63;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.8);   /* Makes text readable */
-    z-index: 2;
-    position: relative;
-    
 }
 
 .overlay .overlay-content .toggle-button p {
