@@ -110,7 +110,7 @@ function setupCountdown(campaignSelector, endTimeMillis) {
 // How to call it (only end date needed)
 document.addEventListener("DOMContentLoaded", () => {
     // Use your wedding end date in UTC (YYYYMMDDTHHmmssZ format)
-    const weddingEndMillis = new Date("2026-04-24T23:59:59Z").getTime();
+    const weddingEndMillis = new Date("2026-04-28T23:59:59Z").getTime();
 
     setupCountdown(".campaign-0", weddingEndMillis);
 });
