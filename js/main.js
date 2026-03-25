@@ -12,24 +12,23 @@
 // });
 
 document.getElementById("toggle-content").addEventListener("click", function () {
-    var wrapper = document.querySelector(".wrapper"); // Change to wrapper
+    var wrapper = document.querySelector(".wrapper");
     var card = document.querySelector(".card");
 
-    // Add the 'hidden' class to start the fade out transition
     wrapper.classList.add("hidden");
 
-    // Wait for the transition to complete
+    // Wait for fade to complete, THEN play music
     wrapper.addEventListener("transitionend", function () {
-        // After fade out is complete, hide the wrapper and show the card
-        wrapper.style.display = "none"; // Hide the wrapper
-        card.style.display = "block";   // Show the card
+        wrapper.style.display = "none";
+        card.style.display = "block";
+        
+        // Now play music (card is visible)
+        const audioPlayer = document.getElementById("audio-player");
+        audioPlayer?.play().catch(e => {
+            console.log('Music play blocked:', e);
+        });
     }, { once: true });
-
-    // Play the audio
-    const audioPlayer = document.getElementById("audio-player");
-    audioPlayer.play();  // Start playing the audio
 });
-
 
 
 
