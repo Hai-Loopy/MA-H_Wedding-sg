@@ -650,6 +650,34 @@ section {
     width: 100%;
     z-index: 500;
 }
+/* ==================== COUNTDOWN POSITION & SAKURA COLOR ==================== */
+.card section.info .countdown {
+    margin-top: 400px !important;     /* ← Change this number to move it lower */
+    width: 50%;
+    padding: 0 15px;
+}
+
+/* Sakura Pink Color for the boxes */
+.card section.info .countdown .counter-boxes .count-box {
+    width: 68px !important;           /* ← Change this to make smaller */
+    height: 68px !important;
+    background-color: 	#FFE6EA !important;     /* Soft sakura pink */
+    border: 2px solid 	#FFE6EA !important;
+    box-shadow: 0 6px 15px rgba(255, 107, 157, 0.4) !important;
+}
+
+/* Numbers (white for good contrast on pink) */
+.card section.info .countdown .counter-boxes .count-box h1 {
+    color: #9F2B68 !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.25) !important;
+    font-size: 1.9rem !important;     /* Smaller numbers */
+}
+
+/* Labels (Ngày, Giờ, etc.) */
+.card section.info .countdown .counter-boxes .count-box span {
+    color: #9F2B68 !important;
+    font-size: 0.75rem !important;
+}
 
 
 
