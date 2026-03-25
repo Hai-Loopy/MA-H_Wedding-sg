@@ -7,28 +7,29 @@
 //     overlay.style.display = "none";
 
     // Play the audio
-   const audioPlayer = document.getElementById("audio-player");
-   audioPlayer.play();  // Start playing the audio
+//    const audioPlayer = document.getElementById("audio-player");
+//    audioPlayer.play();  // Start playing the audio
 // });
 
 document.getElementById("toggle-content").addEventListener("click", function () {
-    var wrapper = document.querySelector(".wrapper");
+    var wrapper = document.querySelector(".wrapper"); // Change to wrapper
     var card = document.querySelector(".card");
 
+    // Add the 'hidden' class to start the fade out transition
     wrapper.classList.add("hidden");
 
-    // Wait for fade to complete, THEN play music
+    // Wait for the transition to complete
     wrapper.addEventListener("transitionend", function () {
-        wrapper.style.display = "none";
-        card.style.display = "block";
-        
-        // Now play music (card is visible)
-        const audioPlayer = document.getElementById("audio-player");
-        audioPlayer?.play().catch(e => {
-            console.log('Music play blocked:', e);
-        });
+        // After fade out is complete, hide the wrapper and show the card
+        wrapper.style.display = "none"; // Hide the wrapper
+        card.style.display = "block";   // Show the card
     }, { once: true });
+
+    // Play the audio
+    const audioPlayer = document.getElementById("audio-player");
+    audioPlayer.play();  // Start playing the audio
 });
+
 
 
 
@@ -88,26 +89,19 @@ function setupCountdown(campaignSelector, endTimeMillis) {
 // How to call it (only end date needed)
 document.addEventListener("DOMContentLoaded", () => {
     // Use your wedding end date in UTC (YYYYMMDDTHHmmssZ format)
-    const weddingEndMillis = new Date("2026-04-28T23:59:59Z").getTime();
+    const weddingEndMillis = new Date("2026-04-24T23:59:59Z").getTime();
 
     setupCountdown(".campaign-0", weddingEndMillis);
 });
 
-
-
-    
-    // Your existing countdown code...
-    const weddingEndMillis = new Date("2026-04-28T23:59:59Z").getTime();
-    setupCountdown(".campaign-0", weddingEndMillis);
-});
 /** =====================================================
  *  Add to Calendar
   ======================================================= */
 const event = {
     title: "Wedding Ceremony of Mai Anh and Hai",
-    startDate: "20260429T175959Z", // YYYYMMDDTHHmmssZ (UTC)
-    endDate: "20260429T215959Z",
-    location: "68-76 Đ. Tản Đà, Phường 11, Quận 5, Hồ Chí Minh 700000, Vietnam",
+    startDate: "20260425T235959Z", // YYYYMMDDTHHmmssZ (UTC)
+    endDate: "20260425T235959Z",
+    location: "Cho Buom, Yet Kieu, Hai Phong city, Vietnam",
     description: "May God bless this couple and all the attendees who've made the time to come",
 };
 
@@ -175,16 +169,16 @@ function addAppleCalendar() {
  *  Location for Google and Waze
   ======================================================= */
 function openGoogleMaps() {
-    const latitude =10.752888017521256;  // Example latitude
-    const longitude = 106.66470487190207;  // Example longitude
+    const latitude =20.873105700045222;  // Example latitude
+    const longitude = 106.26465657582834;  // Example longitude
     const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}&travelmode=driving`;
 
     window.open(googleMapsUrl, "_blank");  // Open in a new tab
 }
 
 function openAppleMaps() {
-    const latitude = 10.752888017521256;   // Example latitude
-    const longitude = 106.66470487190207;  // Example longitude
+    const latitude = 20.873105700045222;   // Example latitude
+    const longitude = 106.26465657582834;  // Example longitude
 
     // Apple Maps directions URL
     const appleMapsUrl = `https://maps.apple.com/?daddr=${latitude},${longitude}&dirflg=d`;
