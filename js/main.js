@@ -7,8 +7,8 @@
 //     overlay.style.display = "none";
 
     // Play the audio
-//    const audioPlayer = document.getElementById("audio-player");
-//    audioPlayer.play();  // Start playing the audio
+   const audioPlayer = document.getElementById("audio-player");
+   audioPlayer.play();  // Start playing the audio
 // });
 
 document.getElementById("toggle-content").addEventListener("click", function () {
