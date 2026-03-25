@@ -329,7 +329,9 @@ function closeAllMenus() {
 // Add click event listeners to all toggle buttons
 for (const [buttonId, menuId] of Object.entries(toggleButtons)) {
     const button = document.getElementById(buttonId);
-    button.addEventListener('click', (event) => toggleMenu(menuId, event));
+    if (button) {
+        button.addEventListener('click', (event) => toggleMenu(menuId, event));
+    }
 }
 
 // Add a global click handler to close all menus when clicking outside
